@@ -1,6 +1,6 @@
 import RegisterFormStyled from "./RegisterFormStyled";
 
-export const RegisterForm = (): JSX.Element => {
+const RegisterForm = (): JSX.Element => {
   return (
     <>
       <RegisterFormStyled className="register-form" autoComplete="off">
@@ -43,3 +43,5 @@ export const RegisterForm = (): JSX.Element => {
     </>
   );
 };
+
+export default RegisterForm;

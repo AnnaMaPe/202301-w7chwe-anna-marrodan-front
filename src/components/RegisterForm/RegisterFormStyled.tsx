@@ -3,6 +3,7 @@ import styled from "styled-components";
 const RegisterFormStyled = styled.form`
   background-color: #cdf6e8;
   margin: auto;
+  margin-top: 2rem;
   width: 30rem;
   padding: 2rem;
   text-align: left;
@@ -12,6 +13,7 @@ const RegisterFormStyled = styled.form`
   align-items: center;
   justify-content: center;
   border-radius: 20%;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 
   label {
     font-size: 25px;
@@ -20,7 +22,7 @@ const RegisterFormStyled = styled.form`
     font-size: 25px;
     border-radius: 5px;
     border: #aaf0d2;
-    padding: 0.5rem;
+    padding: 0.7rem;
   }
 
   .register-form {
