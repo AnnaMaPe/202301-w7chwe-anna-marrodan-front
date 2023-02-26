@@ -1,9 +1,26 @@
 import RegisterFormStyled from "./RegisterFormStyled";
 
-const RegisterForm = (): JSX.Element => {
+interface RegisterFormProps {
+  onSubmit: (userData: FormData) => void;
+}
+
+const RegisterForm = ({ onSubmit }: RegisterFormProps): JSX.Element => {
+  const submmitUserCredentials = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const userData = new FormData(event.currentTarget);
+
+    onSubmit(userData);
+  };
+
   return (
     <>
-      <RegisterFormStyled className="register-form" autoComplete="off">
+      <RegisterFormStyled
+        className="register-form"
+        autoComplete="off"
+        encType="multipart/form"
+        onSubmit={submmitUserCredentials}
+      >
         <h2 className="register-form__title">Register</h2>
         <div className="register-form__info">
           <label htmlFor="username" className="form">
@@ -12,6 +29,7 @@ const RegisterForm = (): JSX.Element => {
           <input
             type="text"
             id="username"
+            name="name"
             aria-label="username"
             placeholder="username"
           />
@@ -21,6 +39,7 @@ const RegisterForm = (): JSX.Element => {
           <input
             type="password"
             id="password"
+            name="password"
             aria-label="password"
             placeholder="password"
           />
@@ -30,6 +49,7 @@ const RegisterForm = (): JSX.Element => {
           <input
             type="text"
             id="email"
+            name="email"
             aria-label="email"
             placeholder="email"
           />
